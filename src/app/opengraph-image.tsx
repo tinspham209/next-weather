@@ -1,9 +1,8 @@
 import { ImageResponse } from "next/server";
-import getCurrentWeather from "../actions/getCurrentWeather";
-import { stats } from "../containers/page-data";
-import { convertKelvinToCelsius, getIcon, upperCaseString } from "../utils";
-import * as weatherIcons from "../utils/icons.json";
-
+import getCurrentWeather from "./actions/getCurrentWeather";
+import { convertKelvinToCelsius, getIcon, upperCaseString } from "./utils";
+import { stats } from "./containers/page-data";
+import * as weatherIcons from "./utils/icons.json";
 export const alt = "Weather Data";
 
 export const contentType = "image/png";
