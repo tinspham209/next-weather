@@ -4,6 +4,9 @@ import { stats } from "../containers/page-data";
 import { convertKelvinToCelsius, getIcon, upperCaseString } from "../utils";
 import * as weatherIcons from "../utils/icons.json";
 
+export const alt = "Weather Data";
+
+export const contentType = "image/png";
 export const runtime = "edge";
 
 export default async function LocationOG({
@@ -11,7 +14,7 @@ export default async function LocationOG({
 }: {
 	params: { location: string };
 }) {
-	const clashData = await fetch(
+	const font = await fetch(
 		new URL("../fonts/ClashDisplay-Semibold.otf", import.meta.url)
 	).then((res) => res.arrayBuffer());
 
@@ -113,7 +116,7 @@ export default async function LocationOG({
 			fonts: [
 				{
 					name: "Clash",
-					data: clashData,
+					data: font,
 				},
 			],
 			emoji: "blobmoji",
