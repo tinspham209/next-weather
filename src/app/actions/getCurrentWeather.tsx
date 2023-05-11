@@ -1,4 +1,4 @@
-import axios from "axios";
+import { toast } from "react-hot-toast";
 
 export interface IWeatherParams {
 	location?: string;
@@ -27,5 +27,10 @@ export default async function getCurrentWeather(params: IWeatherParams) {
 		})
 		.catch((error) => {
 			console.log("error: ", error);
+			toast.error(
+				`Failed to fetch weather in ${params.location}: ${JSON.stringify(
+					error
+				)}`
+			);
 		});
 }
