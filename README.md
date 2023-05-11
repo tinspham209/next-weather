@@ -1,3 +1,13 @@
 # Next Weather App
 
-Practices with SEO in NextJS
+https://weather.tinspham.dev/
+
+# Tech-stack
+- NextJS 13
+- Tailwindcss
+
+Practices with SEO dynamic assets, generate images with code in NextJS
+
+## Try with these domain to see the dynamic assets "og:image"
+- https://weather.tinspham.dev/danang
+- https://weather.tinspham.dev/hanoi
