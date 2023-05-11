@@ -14,7 +14,7 @@ export default async function LocationOG({
 	params: { location: string };
 }) {
 	const font = await fetch(
-		new URL("../fonts/ClashDisplay-Semibold.otf", import.meta.url)
+		new URL("./fonts/ClashDisplay-Semibold.otf", import.meta.url)
 	).then((res) => res.arrayBuffer());
 
 	const weather = await getCurrentWeather(params);
