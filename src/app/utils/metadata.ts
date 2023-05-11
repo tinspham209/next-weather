@@ -23,13 +23,6 @@ export const getMetaData = ({
 			description: description,
 			creator: "@tinspham209",
 		},
-
-		openGraph: {
-			type: "website",
-			url: url,
-			title: `${title}`,
-			description: description,
-		},
 		metadataBase: new URL(DOMAIN_PRODUCT),
 		themeColor: "#FFF",
 	};
