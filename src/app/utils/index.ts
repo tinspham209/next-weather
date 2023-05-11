@@ -16,3 +16,11 @@ export const convertKelvinToCelsius = (val: number) => {
 export const upperCaseString = (str: string) => {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 };
+
+export const getCurrentHour = () => {
+	const dateText = new Date().toLocaleTimeString("en-GB", {
+		hour: "numeric",
+		minute: "numeric",
+	});
+	return dateText;
+};

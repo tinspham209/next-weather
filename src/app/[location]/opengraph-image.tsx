@@ -1,7 +1,12 @@
 import { ImageResponse } from "next/server";
 import getCurrentWeather from "../actions/getCurrentWeather";
 import { stats } from "../containers/page-data";
-import { convertKelvinToCelsius, getIcon, upperCaseString } from "../utils";
+import {
+	convertKelvinToCelsius,
+	getCurrentHour,
+	getIcon,
+	upperCaseString,
+} from "../utils";
 import * as weatherIcons from "../utils/icons.json";
 
 export const alt = "Weather Data";
@@ -26,23 +31,6 @@ export default async function LocationOG({
 		humidity: weather?.main?.humidity || null,
 		wind: weather?.wind?.speed || null,
 		id: weather?.weather ? weather?.weather[0].id : "200",
-	};
-
-	const getCurrentIcon = () => {
-		if (weather) {
-			return getIcon(
-				// @ts-ignore: Unreachable code error
-				weatherIcons.icons[formatWeather.id]
-			);
-		} else {
-			return getIcon(weatherIcons.icons[200]);
-		}
-	};
-
-	const getCurrentHour = () => {
-		const d = new Date();
-		const dateText = d.toTimeString().split(" ")[0];
-		return dateText;
 	};
 
 	return new ImageResponse(
