@@ -21,6 +21,7 @@ export const getCurrentHour = () => {
 	const dateText = new Date().toLocaleTimeString("en-GB", {
 		hour: "numeric",
 		minute: "numeric",
+		timeZone: "Asia/Bangkok",
 	});
 	return dateText;
 };
